@@ -46,6 +46,11 @@ ENV SHELL /bin/bash
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /etc/bash.bashrc
 RUN echo "source /ros2_humble_ws/install/setup.bash" >> ~/.bashrc
 
+# Set Gazebo models path environment variable
+# see https://gazebosim.org/api/sim/8/resources.html
+# Modify here to add your own models path
+RUN echo "export GZ_SIM_RESOURCE_PATH=${GZ_SIM_RESOURCE_PATH}:/ws/src/models" >> ~/.bashrc
+
 # ********************************************************
 # * Anything else you want to do like clean up goes here *
 # ********************************************************
