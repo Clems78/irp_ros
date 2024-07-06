@@ -81,6 +81,22 @@ Launch the example.
 ros2 run px4_ros_com offboard_control
 The vehicle should arm, ascend 5 metres, and then wait (perpetually).
 
+Install QGroundControl
+sudo usermod -a -G dialout $USER
+sudo apt-get remove modemmanager -y
+sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
+sudo apt install libfuse2 -y
+sudo apt install libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor0 -y
+
+Logout and login again to enable the change to user permissions.
+
+  To install QGroundControl:
+
+    Download QGroundControl.AppImage.
+    Install (and run) using the terminal commands:
+
+chmod +x ./QGroundControl.AppImage
+./QGroundControl.AppImage  (or double click)
 
 
 
