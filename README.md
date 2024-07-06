@@ -65,5 +65,25 @@ sudo ldconfig /usr/local/lib/
 
 MicroXRCEAgent udp4 -p 8888
 
+New terminal :  docker exec -it <ID> bash
+cd /home/user/shared_volume
+mkdir ros2_ws/src
+cd ros2_ws/src
+Clone the px4_msgs repo to the /src directory (this repo is needed in every ROS 2 PX4 workspace!): git clone https://github.com/PX4/px4_msgs.git
+Clone the example repository px4_ros_com to the /src directory: git clone https://github.com/PX4/px4_ros_com.git
+Source the ROS 2 development environment into the current terminal and compile the workspace using colcon:
+cd ..
+source /opt/ros/humble/setup.bash
+colcon build
+Source the local_setup.bash: source install/local_setup.bash
+
+Launch the example.
+ros2 run px4_ros_com offboard_control
+The vehicle should arm, ascend 5 metres, and then wait (perpetually).
+
+
+
+
+
 
 
